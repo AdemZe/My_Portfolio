@@ -8,11 +8,9 @@ import githubLight from "../../assets/github-light.svg";
 import githubDark from "../../assets/github-dark.svg";
 import linkedinLight from "../../assets/linkedin-light.svg";
 import linkedinDark from "../../assets/linkedin-dark.svg";
-import CV from "../../assets/Adem_Daghrour_Cv.pdf";
+import CV from "../../assets/CV_Adem_Daghrour.pdf";
 import { useTheme } from "../../common/ThemeContext";
-import pict1 from "../../assets/1.jpg";
-import pict2 from "../../assets/2.jpg";
-import pict3 from "../../assets/7127986.jpg";
+
 
 
 function Hero() {
