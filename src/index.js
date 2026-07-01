@@ -5,6 +5,9 @@ import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider } from "./common/ThemeContext";
 import App from "./App.jsx"
 
+const savedTheme = localStorage.getItem("theme") || "dark";
+document.body.setAttribute("data-theme", savedTheme);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>

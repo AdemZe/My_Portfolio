@@ -1,60 +1,59 @@
 import styles from "./ContactStyles.module.css";
-import { useForm, ValidationError } from "@formspree/react";
-
 function Contact() {
-  const [state, handleSubmit] = useForm("xdknoqze");
-  if (state.succeeded) {
-    return <p>Thanks for joining!</p>;
-  }
-
   return (
     <section id="contact" className={styles.container}>
-      <h1 className="sectionTitle">Contact</h1>
-      <form action="" method="post" onSubmit={handleSubmit}>
-        <div className="formGroup">
-          <label htmlFor="name" hidden>
-            Name
-          </label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Name"
-            required
-          />
-        </div>
-        <div className="formGroup">
-          <label htmlFor="email" hidden>
-            Email
-          </label>
-          <input
-            type="text"
-            name="email"
-            id="email"
-            placeholder="Email"
-            required
-          />
+      <h2 className="sectionTitle">Contact</h2>
+      <p className={styles.subtitle}>
+        Disponible pour un stage de fin d etudes ou une opportunite DevOps
+        Engineer.
+      </p>
 
-          <ValidationError prefix="Email" field="email" errors={state.errors} />
-        </div>
-        <div className="formGroup">
-          <label htmlFor="message" hidden>
-            Message
-          </label>
-          <textarea
-            name="message"
-            id="message"
-            placeholder="Message"
-            required
-          ></textarea>
-        </div>
-        <input
-          className="hover btn"
-          type="submit"
-          value="Submit"
-          disabled={state.submitting}
-        />
-      </form>
+      <div className={styles.contactGrid}>
+        <article>
+          <h3>Email</h3>
+          <a href="mailto:adem.daghrour07@gmail.com">
+            adem.daghrour07@gmail.com
+          </a>
+        </article>
+
+        <article>
+          <h3>Telephone</h3>
+          <a href="tel:+21652716264">+216 52 716 264</a>
+        </article>
+
+        <article>
+          <h3>LinkedIn</h3>
+          <a
+            href="https://www.linkedin.com/in/adem-daghrour-a423b430b/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            linkedin.com/in/adem-daghrour-a423b430b
+          </a>
+        </article>
+
+        <article>
+          <h3>GitHub</h3>
+          <a href="https://github.com/AdemZe" target="_blank" rel="noreferrer">
+            github.com/AdemZe
+          </a>
+        </article>
+      </div>
+
+      <div className={styles.extraInfo}>
+        <p>
+          <strong>Formation:</strong> Cycle d Ingenieur DevOps & Cloud (2eme
+          annee) - ITEAM Universite.
+        </p>
+        <p>
+          <strong>Langues:</strong> Arabe (maternelle), Francais (courant),
+          Anglais (courant).
+        </p>
+      </div>
+
+      <a className={styles.cta} href="mailto:adem.daghrour07@gmail.com">
+        Envoyer un message
+      </a>
     </section>
   );
 }

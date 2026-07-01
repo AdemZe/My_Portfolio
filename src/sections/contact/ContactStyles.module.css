@@ -1,79 +1,59 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-  
-  textarea,
-  input:not([type='submit']) {
-    height: 50px;
-    padding-left: 16px;
-    width: 250px;
-  }
-  
-  textarea {
-    padding-top: 16px;
-    resize: none;
-    height: 250px;
-  }
-  
-  input,
-  textarea {
-    border-radius: 20px;
-    border: #888 1px solid;
-    box-sizing: border-box;
-    justify-self: center;
-    background-color: var(--background-color);
-    color: var(--form-text-color);
-  }
-  
-  ::placeholder {
-    color: var(--form-text-color);
-  }
-  
-  input[type='submit'] {
-    background-color: var(--btn-color);
-    color: var(--btn-text-color);
-    border: none;
-    border-radius: 20px;
-    width: 126px;
-    height: 50px;
-    font-size: 20px;
-    font-weight: bold;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
-    margin: auto;
-  }
-  
-  input[type='submit']:hover {
-    transform: scale(1.05);
-  }
-  
-  input[type='submit']:active {
-    transform: translateY(2px);
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
-  }
+  padding: 26px;
+}
 
-  @media (width >= 800px) {
-    textarea,
-    input:not([type='submit']) {
-      width: 600px;
-      font-size: 20px;
-    }
-    form {
-      gap: 40px;
-    }
+.subtitle {
+  color: var(--muted-text);
+  margin-bottom: 16px;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.contactGrid article {
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.contactGrid h3 {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  color: var(--muted-text);
+}
+
+.contactGrid a {
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.extraInfo {
+  margin-top: 16px;
+  display: grid;
+  gap: 10px;
+}
+
+.extraInfo p {
+  color: var(--muted-text);
+}
+
+.cta {
+  margin-top: 18px;
+  display: inline-flex;
+  align-self: flex-start;
+  text-decoration: none;
+  background: var(--accent-color);
+  color: #fff;
+  border-radius: 12px;
+  padding: 11px 15px;
+  font-weight: 600;
+}
+
+@media (min-width: 760px) {
+  .contactGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  
-  @media (width >= 1400px) {
-    textarea,
-    input:not([type='submit']) {
-      width: 800px;
-    }
-  }
+}

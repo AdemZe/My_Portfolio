@@ -1,7 +1,5 @@
-// Remove the duplicate import of 'Switch' from react-router-dom
-
-
 import "./App.css";
+import Navbar from "./sections/Navbar/Navbar";
 import Footer from "./sections/Footer/Footer";
 import Hero from "./sections/Hero/Hero";
 import Skills from "./sections/Skills/Skills";
@@ -10,19 +8,14 @@ import Projects from "./sections/projets/Projects";
 
 function App() {
   return (
-    <>
+    <div className="app">
+      <Navbar />
       <Hero />
-      <Projects/>
+      <Projects />
       <Skills />
       <Contact />
       <Footer />
-  
-      
- 
-
- 
-
-    </>
+    </div>
   );
 }
 export default App;

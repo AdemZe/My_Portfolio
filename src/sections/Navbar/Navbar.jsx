@@ -1,6 +1,5 @@
-//import styles from "./NavbarStyles.module.css"
 import { useState, useEffect } from "react";
-import { Link } from "react-scroll";
+import styles from "./NavbarStyles.module.css";
 
 function Navbar() {
   const [navActive, setNavActive] = useState(false);
@@ -15,9 +14,7 @@ function Navbar() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 500) {
-        closeMenu();
-      }
+      if (window.innerWidth > 900) closeMenu();
     };
 
     window.addEventListener("resize", handleResize);
@@ -27,84 +24,45 @@ function Navbar() {
     };
   }, []);
 
-  useEffect(() => {
-    if (window.innerWidth <= 1200) {
-      closeMenu();
-    }
-  }, []);
-
   return (
-    <nav className={`navbar ${navActive ? "active" : ""}`}>
-      <div>
-        <img src="./img/logo.svg" alt="Logoipsum" />
+    <nav className={styles.navbar}>
+      <div className={styles.brand}>
+        <span className={styles.brandDot}></span>
+        <a href="#hero">Adem Daghrour</a>
       </div>
-      <button
-        className={`nav__hamburger ${navActive ? "active" : ""}`}
-        onClick={toggleNav}
-      />
-      <span className="nav__hamburger__line"></span>
-      <span className="nav__hamburger__line"></span>
-      <span className="nav__hamburger__line"></span>
 
-      <div className={`navbar--items ${navActive ? "active" : ""}`}>
+      <button
+        className={styles.hamburger}
+        onClick={toggleNav}
+        aria-label="Ouvrir le menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div className={`${styles.menu} ${navActive ? styles.open : ""}`}>
         <ul>
           <li>
-            <Link
-              onClick={closeMenu}
-              activeClass="navbar--active-content"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              to="heroSection"
-              className="navbar--content"
-            >
-              Home
-            </Link>
+            <a href="#hero" onClick={closeMenu}>
+              Profil
+            </a>
           </li>
           <li>
-            <Link
-              onClick={closeMenu}
-              activeClass="navbar--active-content"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              to="Projects"
-              className="navbar--content"
-            >
-              Portfolio
-            </Link>
+            <a href="#projects" onClick={closeMenu}>
+              Projets
+            </a>
           </li>
           <li>
-            <Link
-              onClick={closeMenu}
-              activeClass="navbar--active-content"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              to="AboutMe"
-              className="navbar--content"
-            >
-              About Me
-            </Link>
+            <a href="#skills" onClick={closeMenu}>
+              Competences
+            </a>
           </li>
           <li>
-            <Link
-              onClick={closeMenu}
-              activeClass="navbar--active-content"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              to="testimonial"
-              className="navbar--content"
-            >
-              Contact me 
-            </Link>
+            <a href="#contact" onClick={closeMenu}>
+              Contact
+            </a>
           </li>
-    
         </ul>
       </div>
     </nav>

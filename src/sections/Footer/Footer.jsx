@@ -3,10 +3,8 @@ import styles from './FooterStyles.module.css';
 function Footer() {
   return (
     <section id="footer" className={styles.container}>
-      <p>
-        &copy; 2024 Adem Daghrour . <br />
-        All rights reserved.
-      </p>
+      <p>&copy; {new Date().getFullYear()} Adem Daghrour</p>
+      <small>DevOps & Cloud Engineer Portfolio</small>
     </section>
   );
 }

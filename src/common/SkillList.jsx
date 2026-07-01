@@ -1,10 +1,5 @@
-function SkillList({ src, skill }) {
-    return (
-      <span>
-        <img src={src} alt="Checkmark icon" />
-        <p>{skill}</p>
-      </span>
-    );
-  }
-  
-  export default SkillList;
+function SkillList({ skill }) {
+  return <span>{skill}</span>;
+}
+
+export default SkillList;
