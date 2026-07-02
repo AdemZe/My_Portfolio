@@ -56,7 +56,11 @@ function Hero() {
         </div>
 
         <div className={styles.ctaRow}>
-          <a href={CV} download className={styles.primaryBtn}>
+          <a
+            href={`${CV}?v=20260702`}
+            download="Adem_Daghrour_CV.pdf"
+            className={styles.primaryBtn}
+          >
             Telecharger CV
           </a>
           <a href="#contact" className={styles.secondaryBtn}>
