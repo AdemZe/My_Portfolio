@@ -6,7 +6,6 @@ import githubLight from "../../assets/github-light.svg";
 import githubDark from "../../assets/github-dark.svg";
 import linkedinLight from "../../assets/linkedin-light.svg";
 import linkedinDark from "../../assets/linkedin-dark.svg";
-import CV from "../../assets/Adem_Daghrour_Cv.pdf";
 import { useTheme } from "../../common/ThemeContext";
 
 function Hero() {
@@ -57,7 +56,7 @@ function Hero() {
 
         <div className={styles.ctaRow}>
           <a
-            href={`${CV}?v=20260702`}
+            href="/CV_Adem_Daghrour.pdf?v=20260702"
             download="Adem_Daghrour_CV.pdf"
             className={styles.primaryBtn}
           >
